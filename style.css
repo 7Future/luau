@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+/* Header Styles */
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center; /* Centering the nav */
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #e24a4a;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Centering nav links */
+    align-items: center;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #e24a4a;
+    border-bottom: 3px solid black;
+    font-weight: bold;
+}
+
+
+@media (max-width: 995px) {
+    header {
+        padding: 1rem 5%;
+    }
+
+    nav {
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 100%; /* Make nav take full width */
+        background-color: #161616;
+        justify-content: center; /* Center nav links */
+        border-left: none;
+        border-bottom: 3px solid black;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        text-align: center; /* Centering text */
+    }
+
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid black;
+    }
+}
+
+/* Section Styles */
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+/* Home Section Styles */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: #e24a4a;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img.animated-profile {
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover {
+    transform: scale(1.1);
+}
+
+/* Social Icons Styles */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #e24a4a;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #e24a4a;
+}
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #e24a4a;
+    box-shadow: 0 0 25px #e24a4a;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #e24a4a;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #e24a4a;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    background-color: #e24a4a;
+    color: black;
+    box-shadow: 0 0 25px #e24a4a;
+}
+
+/* Typing Text and Cursor Styles */
+.typing-text {
+    font-size: 3.4rem; /* Adjusted to match the design */
+    font-weight: 600;
+    min-width: 280px;
+    position: relative; /* Ensure proper positioning of the cursor */
+    display: inline-block; /* Allows cursor to be placed immediately after text */
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px; /* Width of the cursor */
+    height: 1.2em; /* Height of the cursor */
+    background-color: #e24a4a; /* Cursor color */
+    vertical-align: bottom; /* Align with the text */
+}
+
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 995px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+/* Projects, Skills, and Contact Sections Styles */
+.projects, .skills, .contact {
+    padding: 5rem 9%;
+    color: white;
+    background-color: black;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.projects h2, .skills h2, .contact h2 {
+    font-size: 3.6rem;
+    margin-bottom: 2rem;
+    color: #e24a4a;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.project {
+    background-color: #161616;
+    border-radius: 2rem;
+    padding: 1rem;
+    max-width: 350px;
+    transition: transform 0.3s;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.project h3 {
+    font-size: 2.4rem;
+    margin-top: 1rem;
+    color: #e24a4a;
+}
+
+.project p {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #e24a4a;
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* Ensure there is enough gap between items */
+    padding: 0; /* Remove default padding */
+}
+
+.skills-list li {
+    font-size: 2rem;
+    color: white;
+    border: 2px solid #e24a4a;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    transition: transform 0.3s;
+    display: flex; 
+    justify-content: center; /* Center content inside each button */
+    align-items: center; /* Center content inside each button */
+}
+
+.skills-list li:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #e24a4a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .skills-list li {
+        font-size: 1.6rem; /* Smaller font size on smaller screens */
+        padding: 0.8rem 1.6rem; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Contact Form Styles */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: #161616;
+    color: white;
+    border: 2px solid #e24a4a;
+    font-size: 1.6rem;
+    resize: none;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+    color: #e24a4a;
+}
+
+.contact form button {
+    padding: 1rem 2.8rem;
+    background-color: #e24a4a;
+    color: black;
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.contact form button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #e24a4a;
+}
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    background: #333;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    margin-bottom: 2rem;
+}
+
+.modal-content button {
+    background: #e24a4a;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+.modal-content button:hover {
+    background: #d13f3f;
+}
