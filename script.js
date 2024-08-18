@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Conclusion message when user leaves the page
+// Conclusion message when user leaves the page (Does not works)
 window.addEventListener('beforeunload', function(e) {
     const confirmationMessage = 'Thank you for visiting my portfolio!';
     e.returnValue = confirmationMessage;
