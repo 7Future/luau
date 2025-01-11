@@ -22,7 +22,6 @@ body {
     color: white;
 }
 
-/* Header Styles */
 header {
     margin-top: 20px;
     position: fixed;
@@ -32,7 +31,7 @@ header {
     padding: 1rem 9%;
     background-color: transparent;
     display: flex;
-    justify-content: center; /* Centering the nav */
+    justify-content: center;
     align-items: center;
     z-index: 100;
 }
@@ -51,7 +50,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: center; /* Centering nav links */
+    justify-content: center;
     align-items: center;
 }
 
@@ -82,9 +81,9 @@ nav a.active {
         display: none;
         top: 0;
         right: 0;
-        width: 100%; /* Make nav take full width */
+        width: 100%;
         background-color: #161616;
-        justify-content: center; /* Center nav links */
+        justify-content: center;
         border-left: none;
         border-bottom: 3px solid black;
         border-bottom-left-radius: 2rem;
@@ -100,7 +99,7 @@ nav a.active {
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
-        text-align: center; /* Centering text */
+        text-align: center;
     }
 
     nav a:hover,
@@ -111,13 +110,11 @@ nav a.active {
     }
 }
 
-/* Section Styles */
 section {
     min-height: 100vh;
     padding: 5rem 9% 5rem;
 }
 
-/* Home Section Styles */
 .home {
     display: flex;
     justify-content: center;
@@ -163,7 +160,6 @@ span {
     transform: scale(1.1);
 }
 
-/* Social Icons Styles */
 .social-icons a {
     display: inline-flex;
     justify-content: center;
@@ -186,7 +182,6 @@ span {
     box-shadow: 0 0 25px #e24a4a;
 }
 
-/* Button Styles */
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
@@ -208,21 +203,20 @@ span {
     box-shadow: 0 0 25px #e24a4a;
 }
 
-/* Typing Text and Cursor Styles */
 .typing-text {
-    font-size: 3.4rem; /* Adjusted to match the design */
+    font-size: 3.4rem;
     font-weight: 600;
     min-width: 280px;
-    position: relative; /* Ensure proper positioning of the cursor */
-    display: inline-block; /* Allows cursor to be placed immediately after text */
+    position: relative;
+    display: inline-block;
 }
 
 .cursor {
     display: inline-block;
-    width: 2px; /* Width of the cursor */
-    height: 1.2em; /* Height of the cursor */
-    background-color: #e24a4a; /* Cursor color */
-    vertical-align: bottom; /* Align with the text */
+    width: 2px;
+    height: 1.2em;
+    background-color: #e24a4a;
+    vertical-align: bottom;
 }
 
 @media (max-width: 1000px) {
@@ -251,7 +245,6 @@ span {
     }
 }
 
-/* Projects, Skills, and Contact Sections Styles */
 .projects, .skills, .contact {
     padding: 5rem 9%;
     color: white;
@@ -307,8 +300,8 @@ span {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem; /* Ensure there is enough gap between items */
-    padding: 0; /* Remove default padding */
+    gap: 2rem;
+    padding: 0;
 }
 
 .skills-list li {
@@ -319,8 +312,8 @@ span {
     border-radius: 2rem;
     transition: transform 0.3s;
     display: flex; 
-    justify-content: center; /* Center content inside each button */
-    align-items: center; /* Center content inside each button */
+    justify-content: center;
+    align-items: center;
 }
 
 .skills-list li:hover {
@@ -328,15 +321,13 @@ span {
     box-shadow: 0 0 25px #e24a4a;
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
     .skills-list li {
-        font-size: 1.6rem; /* Smaller font size on smaller screens */
-        padding: 0.8rem 1.6rem; /* Adjust padding for smaller screens */
+        font-size: 1.6rem;
+        padding: 0.8rem 1.6rem;
     }
 }
 
-/* Contact Form Styles */
 .contact form {
     display: flex;
     flex-direction: column;
@@ -378,7 +369,6 @@ span {
     box-shadow: 0 0 25px #e24a4a;
 }
 
-/* Modal Styles */
 .modal {
     display: flex;
     justify-content: center;
@@ -402,7 +392,6 @@ span {
     max-width: 500px;
     margin: 0 auto;
 }
-
 .modal-content h2 {
     margin-bottom: 1rem;
 }
