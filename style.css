@@ -16,28 +16,28 @@ html {
 
 body {
     width: 100%;
-    height: auto; /* Changed to auto to fit content without extra space */
+    height: auto;
     overflow-x: hidden;
     background-color: black;
     color: white;
 }
 
 header {
-    margin-top: 0; /* Removed margin to align at the very top */
+    margin-top: 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 0; /* Removed side padding to center content */
-    background-color: transparent; /* Changed to transparent for invisible background */
+    padding: 1rem 0;
+    background-color: transparent;
     display: flex;
-    justify-content: center; /* Center the navigation */
+    justify-content: center;
     align-items: center;
     z-index: 100;
 }
 
 #menu-icon {
-    font-size: 3.5rem; /* Slightly larger icon for mobile */
+    font-size: 3.5rem;
     color: white;
     cursor: pointer;
     display: none;
@@ -50,18 +50,18 @@ nav {
 }
 
 nav a {
-    font-size: 2.5rem; /* Increased font size for larger text */
+    font-size: 2.5rem;
     color: white;
-    margin-left: 5rem; /* Increased margin for better spacing */
-    font-weight: 600; /* Bolder text */
+    margin-left: 5rem;
+    font-weight: 600;
     transition: 0.3s ease;
-    border-bottom: 4px solid transparent; /* Thicker underline */
+    border-bottom: 4px solid transparent;
 }
 
 nav a:hover,
 nav a.active {
     color: #e24a4a;
-    border-bottom: 4px solid #e24a4a; /* Thicker active underline */
+    border-bottom: 4px solid #e24a4a;
     font-weight: bold;
 }
 
@@ -80,7 +80,7 @@ nav a.active {
         top: 100%;
         right: 0;
         width: 100%;
-        background-color: transparent; /* Changed to transparent for mobile menu as well */
+        background-color: transparent;
         justify-content: center;
         border-left: none;
         border-bottom: 3px solid #e24a4a;
@@ -95,8 +95,8 @@ nav a.active {
 
     nav a {
         display: block;
-        font-size: 3rem; /* Larger text for mobile menu */
-        margin: 4rem 0; /* Increased spacing for mobile */
+        font-size: 3rem;
+        margin: 4rem 0;
         text-align: center;
     }
 
@@ -114,8 +114,8 @@ section {
 }
 
 .contact {
-    min-height: auto; /* Removed min-height for contact to fit content only */
-    padding-bottom: 0; /* Removed bottom padding to eliminate extra space */
+    min-height: auto;
+    padding-bottom: 0;
 }
 
 .home {
@@ -332,16 +332,16 @@ span {
 }
 
 .contact-info {
-    font-size: 4rem; /* Increased from default (1.6rem) to make it much larger and more visible */
-    font-weight: 700; /* Bolder text for emphasis */
-    margin-top: 2rem; /* Added margin for better spacing */
-    color: #e24a4a; /* Changed color to match the theme for better visibility */
-    text-shadow: 0 0 10px rgba(226, 74, 74, 0.5); /* Added subtle glow for visibility */
+    font-size: 4rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    color: #e24a4a;
+    text-shadow: 0 0 10px rgba(226, 74, 74, 0.5);
 }
 
 .contact-info strong {
-    font-size: 5rem; /* Even larger for the username to stand out */
-    color: white; /* White for contrast */
+    font-size: 5rem;
+    color: white;
     font-weight: 800;
 }
 
@@ -356,19 +356,19 @@ span {
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     z-index: 1000;
-    opacity: 0; /* Start with fade out */
-    animation: fadeIn 1s forwards; /* Fade in animation */
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
 .modal-content {
     background: #333;
-    padding: 4rem; /* Increased padding for larger size */
-    border-radius: 10px; /* Slightly larger border radius */
+    padding: 4rem;
+    border-radius: 10px;
     text-align: center;
-    max-width: 800px; /* Increased max-width for bigger modal */
+    max-width: 800px;
     margin: 0 auto;
-    box-shadow: 0 0 30px rgba(226, 74, 74, 0.7); /* Added glow shadow for better style */
-    border: 2px solid #e24a4a; /* Added border for emphasis */
+    box-shadow: 0 0 30px rgba(226, 74, 74, 0.7);
+    border: 2px solid #e24a4a;
 }
 
 .modal-image {
@@ -376,35 +376,35 @@ span {
     max-width: 400px;
     margin-bottom: 2rem;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(226, 74, 74, 0.5); /* Subtle glow on image */
+    box-shadow: 0 0 15px rgba(226, 74, 74, 0.5);
 }
 
 .modal-content h2 {
-    margin-bottom: 2rem; /* Increased spacing */
-    font-size: 4rem; /* Larger font size */
-    color: #e24a4a; /* Theme color */
-    text-shadow: 0 0 5px rgba(226, 74, 74, 0.5); /* Glow effect */
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    color: #e24a4a;
+    text-shadow: 0 0 5px rgba(226, 74, 74, 0.5);
 }
 
 .modal-content p {
-    margin-bottom: 3rem; /* Increased spacing */
-    font-size: 2.5rem; /* Larger font size */
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
 }
 
 .modal-content button {
     background: #e24a4a;
     color: #fff;
-    padding: 1.5rem 3rem; /* Larger padding */
+    padding: 1.5rem 3rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 2.5rem; /* Larger font size */
-    transition: background 0.3s ease, transform 0.3s ease; /* Smooth hover */
+    font-size: 2.5rem;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .modal-content button:hover {
     background: #d13f3f;
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05);
 }
 
 @keyframes fadeIn {
