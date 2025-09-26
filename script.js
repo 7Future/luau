@@ -7,6 +7,14 @@ document.addEventListener('contextmenu', function(e) {
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav a');
+    const menuIcon = document.querySelector('#menu-icon');
+    const navbar = document.querySelector('nav');
+
+    if (menuIcon && navbar) {
+        menuIcon.addEventListener('click', function() {
+            navbar.classList.toggle('active');
+        });
+    }
 
     navLinks.forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -21,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.forEach(link => link.classList.remove('active'));
             this.classList.add('active');
 
-            if (targetId === '#contact') {
-                gsap.to(window, { duration: 1.5, scrollTo: targetId, ease: 'power4.out' });
+            if (navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
             }
         });
     });
@@ -45,14 +53,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const typingTextElement = document.querySelector('.typing-text');
+    const typingSpan = document.querySelector('.typing-span');
     const phrases = ['LuaU Scripter', 'Game Developer', 'Problem Solver', 'Backend Expert', 'Top Writer'];
     
     let phraseIndex = 0;
     let charIndex = 0;
 
+    const cursor = document.createElement('span');
+    cursor.className = 'cursor';
+    typingTextElement.appendChild(cursor);
+
     function type() {
         if (charIndex < phrases[phraseIndex].length) {
-            typingTextElement.textContent += phrases[phraseIndex].charAt(charIndex);
+            typingSpan.textContent += phrases[phraseIndex].charAt(charIndex);
             charIndex++;
             setTimeout(type, 150);
         } else {
@@ -62,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function erase() {
         if (charIndex > 0) {
-            typingTextElement.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
+            typingSpan.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
             charIndex--;
             setTimeout(erase, 100);
         } else {
@@ -71,13 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    const cursor = document.createElement('span');
-    cursor.className = 'cursor';
-    typingTextElement.appendChild(cursor);
-
     function blinkCursor() {
         cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-        setTimeout(blinkCursor, 600);
+        setTimeout(blinkCursor, 500);
     }
 
     blinkCursor();
@@ -107,21 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
         stagger: 0.2
     });
 
-    gsap.from('.contact-form input, .contact-form textarea, .contact-form button', {
-        scrollTrigger: '.contact-form',
-        duration: 1.5,
-        y: 50,
-        opacity: 0,
-        ease: 'power4.out',
-        stagger: 0.2
-    });
-
     function applyAnimeEffects() {
         gsap.to('.animated-profile', { duration: 2, scale: 1.1, yoyo: true, repeat: -1, ease: 'sine.inOut' });
     }
 
     const backgroundMusic = document.getElementById('backgroundMusic');
-    const playMusicButton = document.getElementById('playMusicButton');
     const welcomeModal = document.getElementById('welcomeModal');
     const continueButton = document.getElementById('continueButton');
 
@@ -150,12 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
         playMusic();
         document.removeEventListener('click', arguments.callee);
     });
-
-    if (playMusicButton) {
-        playMusicButton.addEventListener('click', function() {
-            playMusic();
-        });
-    }
 });
 
 window.addEventListener('beforeunload', function(e) {

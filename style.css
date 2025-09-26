@@ -16,36 +16,31 @@ html {
 
 body {
     width: 100%;
-    height: 100vh;
+    height: auto; /* Changed to auto to fit content without extra space */
     overflow-x: hidden;
     background-color: black;
     color: white;
 }
 
 header {
-    margin-top: 20px;
+    margin-top: 0; /* Removed margin to align at the very top */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 9%;
-    background-color: transparent;
+    padding: 1rem 0; /* Removed side padding to center content */
+    background-color: transparent; /* Changed to transparent for invisible background */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the navigation */
     align-items: center;
     z-index: 100;
 }
 
-.logo {
-    font-size: 3rem;
-    color: #e24a4a;
-    font-weight: 800;
+#menu-icon {
+    font-size: 3.5rem; /* Slightly larger icon for mobile */
+    color: white;
     cursor: pointer;
-    transition: 0.5s ease;
-}
-
-.logo:hover {
-    transform: scale(1.1);
+    display: none;
 }
 
 nav {
@@ -55,37 +50,40 @@ nav {
 }
 
 nav a {
-    font-size: 1.8rem;
+    font-size: 2.5rem; /* Increased font size for larger text */
     color: white;
-    margin-left: 4rem;
-    font-weight: 500;
+    margin-left: 5rem; /* Increased margin for better spacing */
+    font-weight: 600; /* Bolder text */
     transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
+    border-bottom: 4px solid transparent; /* Thicker underline */
 }
 
 nav a:hover,
 nav a.active {
     color: #e24a4a;
-    border-bottom: 3px solid black;
+    border-bottom: 4px solid #e24a4a; /* Thicker active underline */
     font-weight: bold;
 }
-
 
 @media (max-width: 995px) {
     header {
         padding: 1rem 5%;
     }
 
+    #menu-icon {
+        display: block;
+    }
+
     nav {
         position: absolute;
         display: none;
-        top: 0;
+        top: 100%;
         right: 0;
         width: 100%;
-        background-color: #161616;
+        background-color: transparent; /* Changed to transparent for mobile menu as well */
         justify-content: center;
         border-left: none;
-        border-bottom: 3px solid black;
+        border-bottom: 3px solid #e24a4a;
         border-bottom-left-radius: 2rem;
         padding: 1rem;
     }
@@ -97,8 +95,8 @@ nav a.active {
 
     nav a {
         display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
+        font-size: 3rem; /* Larger text for mobile menu */
+        margin: 4rem 0; /* Increased spacing for mobile */
         text-align: center;
     }
 
@@ -106,13 +104,18 @@ nav a.active {
     nav a.active {
         padding: 1rem;
         border-radius: 0.5rem;
-        border-bottom: 0.5rem solid black;
+        border-bottom: 0.5rem solid #e24a4a;
     }
 }
 
 section {
     min-height: 100vh;
     padding: 5rem 9% 5rem;
+}
+
+.contact {
+    min-height: auto; /* Removed min-height for contact to fit content only */
+    padding-bottom: 0; /* Removed bottom padding to eliminate extra space */
 }
 
 .home {
@@ -328,45 +331,18 @@ span {
     }
 }
 
-.contact form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    max-width: 400px;
-    margin: 0 auto;
+.contact-info {
+    font-size: 4rem; /* Increased from default (1.6rem) to make it much larger and more visible */
+    font-weight: 700; /* Bolder text for emphasis */
+    margin-top: 2rem; /* Added margin for better spacing */
+    color: #e24a4a; /* Changed color to match the theme for better visibility */
+    text-shadow: 0 0 10px rgba(226, 74, 74, 0.5); /* Added subtle glow for visibility */
 }
 
-.contact form input,
-.contact form textarea {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 2rem;
-    background-color: #161616;
-    color: white;
-    border: 2px solid #e24a4a;
-    font-size: 1.6rem;
-    resize: none;
-}
-
-.contact form input::placeholder,
-.contact form textarea::placeholder {
-    color: #e24a4a;
-}
-
-.contact form button {
-    padding: 1rem 2.8rem;
-    background-color: #e24a4a;
-    color: black;
-    border-radius: 2rem;
-    font-size: 1.6rem;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.contact form button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px #e24a4a;
+.contact-info strong {
+    font-size: 5rem; /* Even larger for the username to stand out */
+    color: white; /* White for contrast */
+    font-weight: 800;
 }
 
 .modal {
@@ -386,28 +362,30 @@ span {
 
 .modal-content {
     background: #333;
-    padding: 2rem;
-    border-radius: 5px;
+    padding: 4rem; /* Increased padding for larger size */
+    border-radius: 10px; /* Slightly larger border radius */
     text-align: center;
-    max-width: 500px;
+    max-width: 800px; /* Increased max-width for bigger modal */
     margin: 0 auto;
 }
 .modal-content h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem; /* Increased spacing */
+    font-size: 4rem; /* Larger font size */
 }
 
 .modal-content p {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem; /* Increased spacing */
+    font-size: 2.5rem; /* Larger font size */
 }
 
 .modal-content button {
     background: #e24a4a;
     color: #fff;
-    padding: 1rem 2rem;
+    padding: 1.5rem 3rem; /* Larger padding */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.6rem;
+    font-size: 2.5rem; /* Larger font size */
 }
 
 .modal-content button:hover {
