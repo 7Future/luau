@@ -36,20 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const hireMeButton = document.querySelector('.hire-me');
-    const contactButton = document.querySelector('.contact-more');
 
-    if (hireMeButton && contactButton) {
+    if (hireMeButton) {
         hireMeButton.addEventListener('click', function(e) {
             e.preventDefault();
             document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
         });
-
-        contactButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-        });
     } else {
-        console.error('Hire Me or Contact More buttons not found');
+        console.error('Hire Me button not found');
     }
 
     const typingTextElement = document.querySelector('.typing-text');
@@ -134,8 +128,11 @@ document.addEventListener('DOMContentLoaded', function() {
         welcomeModal.style.display = 'flex';
 
         continueButton.addEventListener('click', function() {
-            welcomeModal.style.display = 'none';
-            playMusic();
+            welcomeModal.style.animation = 'fadeOut 1s forwards'; // Fade out animation
+            setTimeout(() => {
+                welcomeModal.style.display = 'none';
+                playMusic();
+            }, 1000); // Match animation duration
         });
     }
 
